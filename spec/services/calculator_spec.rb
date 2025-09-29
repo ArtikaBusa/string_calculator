@@ -10,5 +10,9 @@ RSpec.describe Calculator, type: :model do
       expect(described_class.add("1")).to eq(1)
     end
 
+    it "returns sum of two numbers" do
+      expect(described_class.add("1,5")).to eq(6)
+    end
+
   end
 end
