@@ -14,5 +14,9 @@ RSpec.describe Calculator, type: :model do
       expect(described_class.add("1,5")).to eq(6)
     end
 
+    it "returns sum of multiple numbers" do
+      expect(described_class.add("1,2,3,4,5")).to eq(15)
+    end
+
   end
 end
