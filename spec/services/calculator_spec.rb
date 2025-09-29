@@ -25,5 +25,16 @@ RSpec.describe Calculator, type: :model do
     it "supports custom delimiter" do
       expect(described_class.add("//;\n1;2")).to eq(3)
     end
+
+    it "raises error for single negative number" do
+      expect { described_class.add("1,-2,3") }
+        .to raise_error(Calculator::NegativeNumberError, "negative numbers not allowed: -2")
+    end
+
+    it "raises error for multiple negative numbers" do
+      expect { described_class.add("1,-2,-3,4") }
+        .to raise_error(Calculator::NegativeNumberError, "negative numbers not allowed: -2, -3")
+    end
+
   end
 end
