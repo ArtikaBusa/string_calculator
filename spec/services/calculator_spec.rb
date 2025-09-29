@@ -35,6 +35,5 @@ RSpec.describe Calculator, type: :model do
       expect { described_class.add("1,-2,-3,4") }
         .to raise_error(Calculator::NegativeNumberError, "negative numbers not allowed: -2, -3")
     end
-
   end
 end
